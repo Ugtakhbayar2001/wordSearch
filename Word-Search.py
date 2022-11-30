@@ -410,7 +410,15 @@ def generate(width, height, words):
     grid = rand_fill(grid)
     return (grid, words_in_grid)
 
-    
+def print_generated(grid, words): 
+
+    """ Prints generated word search """
+
+    print_grid = ""
+    for row in range(len(grid)):
+        for column in range(len(grid[0])):
+            print(grid[row][column], end="")
+        print()
 
 
                      
@@ -430,7 +438,10 @@ def generate(width, height, words):
 #                  [" ", " ", "d", "f"], 
 #                  ["h", " ", "l", "k"]]))
 
-# print(generate(4,5, ["cat", "bat", "hat", "bag"]))
+g, w = generate(4,5, ["cat", "bat", "hat", "bag"])
+print_generated(g, w)
+
+# print_generated(generate(4,5, ["cat", "bat", "hat", "bag"]))
 
 # print(is_valid([[" ", " ", " ", " "], 
 #                 [" ", " ", " ", " "], 
